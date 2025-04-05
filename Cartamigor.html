@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi gorda</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-image: url('papel-quemado.png'); /* Asegúrate de tener la imagen en la misma carpeta */
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      color: #3b2f2f;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #5b2c2c;
+      background-color: rgba(255,255,255,0.7);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+    }
+
+    .message {
+      display: none;
+      margin-top: 1.5rem;
+      background-color: rgba(255,255,255,0.85);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #8a2e2e;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .message {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body onload="playMusic()">
+
+  <!-- Etiqueta de audio -->
+  <audio id="music" src="Lugar seguro carta.mp3.mp3" preload="auto"></audio>
+
+  <div class="card" onclick="showMessage()">
+    <h1>Para mi gorda</h1>
+    <div class="message" id="message">
+      <h2>Te hago esta cartita con mucho amor mi gorda:</h2>
+      <p>
+Amor mío,  
+No sé ni por dónde empezar, porque cuando se trata de vos, las palabras se me quedan cortas. Pero lo voy a intentar, porque quiero que sepas cuánto te amo, cuánto te extraño, y lo inmensamente feliz que me hace tenerte en mi vida.  
+Sos la mujer de mis sueños, mi compañera, mi risa diaria, mi calma en los días difíciles, mi todo. Con vos viví los momentos más lindos que alguien puede vivir: esas risas que nos sacaban hasta lágrimas, esas miradas cómplices, esos abrazos que lo curaban todo, esos besos que me hacían sentir en casa. Todo eso que compartimos estando juntitos, es lo que me da fuerzas hoy.  
+Me acuerdo de cuando nos quedábamos horas abrazados, hablando de la vida, soñando despiertos, llorando juntos también… porque hasta en los momentos más tristes, tu abrazo era mi lugar seguro. Y aunque ahora estés en Ombúes y la distancia no me permita verte como quisiera, mi amor por vos no entiende de kilómetros. Porque si tengo que esperarte, lo haría mil veces. Y si tengo que cruzar el mundo para darte ese beso y ese abrazo que tanto deseo, lo haría sin pensarlo.  
+No hay otra mujer como vos, mi Camila. Nadie me hace sentir lo que vos me hacés sentir. Nadie me conoce como vos me conocés. Yo no quiero a nadie más, porque ya te encontré a vos… y con eso tengo todo.  
+Quiero una vida a tu lado, quiero que algún día vos seas la mamá de ese ieie que tanto soñamos, ese bebito hermoso que salga igual a vos, con tu sonrisa, con tu ternura, con esa forma tan única que tenés de amar.  
+Te amo, Camilita. Te amo más de lo que las palabras pueden decir. Sos y siempre vas a ser el amor de mi vida.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById('music');
+      music.play(); // Reproduce la música al abrir la carta
+
+      // Detener la música después de 2 minutos y 33 segundos (153000 milisegundos)
+      setTimeout(() => {
+        music.pause(); // Detiene la música
+        music.currentTime = 0; // Reinicia la música al inicio
+      }, 153000);
+    }
+
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
